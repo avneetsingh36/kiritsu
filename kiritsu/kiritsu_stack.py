@@ -1,5 +1,6 @@
 from aws_cdk import Stack
 from aws_cdk import aws_s3 as s3
+from aws_cdk import aws_lambda as _lambda
 from constructs import Construct
 
 class KiritsuStack(Stack):
@@ -7,4 +8,9 @@ class KiritsuStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        s3.Bucket(self, "MyFirstResouce", versioned=True)
+        _lambda.Function(
+                self, "BasicHelloLambda",
+                runtime=_lambda.Runtime.PYTHON_3_12,
+                handler="hello.handler",
+                code=_lambda.Code.from_asset("lambda")
+        )
