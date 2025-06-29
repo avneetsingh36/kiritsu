@@ -9,8 +9,8 @@ class KiritsuStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         _lambda.Function(
-                self, "BasicHelloLambda",
+                self, "LocalWeatherLambda",
                 runtime=_lambda.Runtime.PYTHON_3_12,
-                handler="hello.handler",
+                handler="main.handler",
                 code=_lambda.Code.from_asset("lambda")
         )
