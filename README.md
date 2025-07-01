@@ -1,4 +1,3 @@
 # Kiritsu
 
-working...
-
+building something for myself
