@@ -1,7 +1,7 @@
-from weather import get_weather
+from calc import return_five
 
 def handler(event, context):
-    temp = get_weather()
-    print(temp)
+    num = return_five()
+    print(num)
 
-    return "Hello Avneet, from Lamda"
+    return f'Hello Avneet, from Lamda - here is your num -> {num}'
